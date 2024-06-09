@@ -34,7 +34,7 @@ To get an image, make a GET request to the `/image` route with the following que
 
 Example:
 
-http://localhost:3000/?image_name=sicily_1.jpg&width=200&height=200
+http://localhost:8090/?image_name=sicily_1.jpg&width=200&height=200
 
 ## Running the Tests
 
