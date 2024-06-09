@@ -26,12 +26,17 @@ image.get('/', async (req: Request, res: Response) => {
     }
 
     const image_name_output =
-      image_name.split('.')[0] + `_${width}x${height}.jpg`;
+      image_name.split('.')[0] + `_${width}-${height}.jpg`;
+
     const image_path_output = get_image_path(
       image_name_output,
       ImageType.RESIZED,
     );
 
+    if (fs.existsSync(image_path_output)) {
+      res.sendFile(image_path_output);
+      return;
+    }
     const resized_image = await resize_image({
       name: image_name,
       width: width,
