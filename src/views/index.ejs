@@ -1,0 +1,29 @@
+<body>
+    <h1>Welcome to the Udacity Image Processing API</h1>
+    <p>
+        The Udacity Image Processing API provides a simple way to resize images. Here's how you can use it:
+    </p>
+    <p>
+        Make a GET request to the following endpoint:
+    </p>
+    <p>
+      <i>http://localhost:3000/image?image_name=<strong>IMAGE_NAME</strong>&height=<strong>HEIGHT</strong>&width=<strong>WIDTH</strong></i>
+    </p>
+    <ul>
+      <li><strong><i>IMAGE_NAME</i></strong>: Replace this with one of the available filenames listed below.</li>
+      <li><strong><i></i>HEIGHT</i></strong>: Replace this with the desired height of the image. This should be a positive integer.</li>
+      <li><strong><i></i>WIDTH</i></strong>: Replace this with the desired width of the image. This should be a positive integer.</li>
+    </ul>
+    <p>
+        For example, to resize the image <strong>sicily_2.jpg</strong> to a height of 200 and a width of 200, you would make a GET request to: <br>
+        <a href="http://localhost:8090/image?image_name=sicily_2.jpg&height=200&width=200">http://localhost:3000/image?image_name=sicily_2.jpg&height=200&width=200</a>
+    </p>
+    <div class="names">
+    <h3>Available image names:</h3>
+      <% filenames.forEach((filename) => { %>
+        <div class="image">
+          <li><%= filename %></li>
+        </div>
+      <% }) %>
+    </div>
+  </body>
